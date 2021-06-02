@@ -1,0 +1,94 @@
+<div class="content" role="main">
+  <mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Multiplicar">
+      <form [formGroup]="multiplyData" (ngSubmit)="onMultiply()">
+        <mat-form-field>
+          <mat-label>Primer Número</mat-label>
+          <input matInput value="0" id="first" type="number" formControlName="first">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Segundo Número</mat-label>
+          <input matInput value="0" id="second" type="number" formControlName="second">
+        </mat-form-field>
+        <div>
+          <label>El Resultado es {{multiplyResult}}</label>
+        </div>
+        <button mat-raised-button class="button" type="submit">Multiplicar!</button>
+      </form>
+    </mat-tab>
+    <mat-tab label="Uso de Let y Const">
+      <form>
+        <label>Se pueden cambiar a let, nombre y edad, ya que son unas variable que se van a usar en el scope y
+          se pueden reasignar.</label> <br />
+        <label>Se puede cambiar a const, PERSONAJE, ya que no va a cambiar su estructura, pero puede cambiar
+          su contenido.</label><br />
+        <label>Ejemplo en el ngOnInit.</label>
+      </form>
+    </mat-tab>
+    <mat-tab label="Validar el Objeto">
+      <form [formGroup]="validateData" (ngSubmit)="onValidate()">
+        <mat-form-field>
+          <mat-label>Texto a buscar</mat-label>
+          <input matInput value="" id="search" type="text" formControlName="search">
+        </mat-form-field>
+        <div>
+          <label>{{validateResult}}</label>
+        </div>
+        <button mat-raised-button class="button" type="submit">Validar</button>
+      </form>
+    </mat-tab>
+    <mat-tab label="Func con flecha">
+      <form [formGroup]="arrowFuncData" (ngSubmit)="onArrowFunc()">
+        <mat-form-field>
+          <mat-label>Primer Número</mat-label>
+          <input matInput value="0" id="first" type="number" formControlName="first">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Segundo Número</mat-label>
+          <input matInput value="0" id="second" type="number" formControlName="second">
+        </mat-form-field>
+        <div>
+          <label>Resultado {{arrowFuncResult}}</label>
+        </div>
+        <button mat-raised-button class="button" type="submit">Calcular</button>
+      </form>
+    </mat-tab>
+    <mat-tab label="Función con parámetros">
+      <form [formGroup]="parametersData" (ngSubmit)="onParameters()">
+        <mat-form-field>
+          <mat-label>Nombre</mat-label>
+          <input matInput id="name" type="text" formControlName="name">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Poder</mat-label>
+          <input matInput id="power" type="text" formControlName="power">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Arma</mat-label>
+          <input matInput id="weapon" type="text" formControlName="weapon">
+        </mat-form-field>
+        <div>
+          <label>{{parametersResult}}</label>
+        </div>
+        <button mat-raised-button class="button" type="submit">Avenger</button>
+      </form>
+    </mat-tab>
+    <mat-tab label="Área">
+      <form [formGroup]="rectangleData" (ngSubmit)="onRectangle()">
+        <mat-form-field>
+          <mat-label>Base</mat-label>
+          <input matInput value="0" id="base" type="number" formControlName="base">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Altura</mat-label>
+          <input matInput value="0" id="height" type="number" formControlName="height">
+        </mat-form-field>
+        <div>
+          <label>Área {{rectangleResult}}</label>
+        </div>
+        <button mat-raised-button class="button" type="submit">Área</button>
+      </form>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+<router-outlet></router-outlet>
